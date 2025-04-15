@@ -1,3 +1,19 @@
 Next-> 
 
 Databases, Models, Error Handing/Async 
+
+Databases-> SQL and NoSqL, mongodb, atlas, compass
+
+Asynchronous -> data depends on 3rd party 
+
+Error handling -> unknown errors handle -> rather than crashing
+                elegantly handle the error 
+
+
+
+MongoDB -> install, mongoCompass -> database, collections 
+    -> integrate in our project
+
+Non -relational -> MAXIMUM LEVEL OPTIMIZATION 
+        -> Data Validation
+        -> Data Modelling 

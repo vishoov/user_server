@@ -1,7 +1,7 @@
 
 const router = require("express").Router();
 
-const { register, login } = require("../controller/user.controllers");
+const { register, login, profileRoute } = require("../controller/user.controllers");
 
 //register
 router.post("/register", register)
@@ -15,18 +15,12 @@ router.post("/login", login)
 // get /profile -> welcome user, this is your profile 
 //profile
 
-router.get("/profile", (req, res) => {
-
-    const {username, email, password} = req.body
-    
-    res.send(`Welcome ${username}, this is your profile`);
-    
-    })
+router.get("/profile", profileRoute)
 
 //reset password
-router.put("/reset-password", (req, res)=>{    
+router.put("/reset-password", async (req, res)=>{    
     const { email, password, newpassword } = req.body;
-
+    //await
     console.log(email, password, newpassword);
     res.send("Password reset successfully");
 
