@@ -17,3 +17,7 @@ MongoDB -> install, mongoCompass -> database, collections
 Non -relational -> MAXIMUM LEVEL OPTIMIZATION 
         -> Data Validation
         -> Data Modelling 
+
+    https://www.mongodb.com/try/download/community
+
+    https://www.youtube.com/watch?v=jvaBaxlTqU8
