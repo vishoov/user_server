@@ -21,3 +21,13 @@ Non -relational -> MAXIMUM LEVEL OPTIMIZATION
     https://www.mongodb.com/try/download/community
 
     https://www.youtube.com/watch?v=jvaBaxlTqU8
+
+
+    Mongo install
+    mongoshell
+    mongoCompass
+
+    shell commands -> db setup, db switch, collection, Documents
+
+directly from our server 
+    mongoose -> connect, model, in all routes 

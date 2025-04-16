@@ -1,0 +1,70 @@
+Mongo DB Notes
+
+
+1. install mongodb and compass
+2. open compass
+3. set up a new connection
+4. open mongoshell
+
+- use db_name 
+    it connects to the database you want to connect to or creates a new db if it doesnt exist
+
+Cluster -> localhost:27017
+DB -> fresh
+collections -> Users, Products
+Documents -> {name:laptop,....}
+
+
+- db.createCollection('name')
+    - creates a collection 
+
+CRUD operations
+Create, Read, Update, Delete 
+
+1. Create
+    db.collection.insertOne({the object}) -> inserts one document to the db
+
+
+    ID IS MANDATORY IN DATABASES 
+
+db.users.insertMany([
+  {"name":"abc"},{"name":"cde"}
+
+
+])
+    
+
+2. Read
+    db.collection.find() -> condition 
+
+
+
+    db.users.insertOne({
+"name":"Ravi",
+"country":"India",
+_id:01
+
+
+})   -> with custom id
+
+
+3. Update
+
+    db.collection.updateOne()
+
+    db.collection.updateMany()
+
+4. Delete
+
+    db.collection.deleteOne()
+    db.collection.deleteMany()
+
+
+    We will be using a DRIVER to handle the database 
+
+    mongoose -> mongodb driver, ODM Software
+
+        Object Document Modelling -> json based object-> document in database -> Model 
+
+
+        functions -> from handler functions itself  
