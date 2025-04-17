@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     },
     email:{
         type:String,
-        required:true,
+        required:false,
         unique:true,
 
         validate:{
@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        required:true,
+        required:false,
         minLength:8,
         //minimum length of password is 8
         maxLength:20,
@@ -85,6 +85,11 @@ const userSchema = new mongoose.Schema({
         //default value is user
         //if role is not provided then default value is user
 
+    },
+    city:{
+        type:String,
+        required:false,
+        //this field is not required
     }
 }, {
     timestamps:true,

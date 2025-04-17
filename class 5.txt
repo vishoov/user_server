@@ -68,3 +68,34 @@ _id:01
 
 
         functions -> from handler functions itself  
+
+
+        Conditional Queries 
+
+       1.  User.find() -> age greater than 20 years
+        QUERY OPERATORS
+                User.find({ age : { $gt:20 } })
+                $gt -> greater than 
+                $lt -> less than
+                $gte -> greater than or equal to
+                $lte -> less than or equal to 
+                $ne -> not equal to 
+
+        User.find()-> greater than 20 years but less than 40 years 
+                age -> >20 AND < 40
+
+                LOGICAL OPERATORS:
+                AND OR NOT NOR
+
+                User.find( { $and : [ { age:{$gt:20} }, {age:{$lt:40}}, {age:{$ne:30}} ] } )
+                User.find({ $or : []})
+                User.find({$nor:[]})
+        User.find()-> name:abc
+
+                User.find({name:"Virat Kohli"})
+
+
+
+        User.find() -> country, city, email, phone
+
+            User.find({ country : "India" })

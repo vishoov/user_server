@@ -31,3 +31,4 @@ Non -relational -> MAXIMUM LEVEL OPTIMIZATION
 
 directly from our server 
     mongoose -> connect, model, in all routes 
+
