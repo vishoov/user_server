@@ -1,0 +1,61 @@
+api security best practices 
+
+we are dealing with the data, and data is a very important asset
+so we need to secure it
+so for that, we are using API Security and Authentication 
+
+1. Password Security -> Encryption - done
+2. API Security -> User Authentication 
+3. Server Security -> Server shield 
+4. Rate Limiting -> to prevent Dos Attacks  - done
+5. Environment Variables - done
+
+
+mongoose error -> network access -> ip address add -> worked 
+
+Rate Limiting 
+
+npm i express-rate-limit
+
+rate limiter -> limits the number of requests we can send to the server in a given
+time bracket
+
+Password Security
+Encryption
+
+the password needs to be encrypted -> even after if someone is accessing the data
+    the password remains protected as it is stored in form of a random string 
+
+"hellothere" -> "fohspoh90t4.,n/.ldhp9yp9hipugspigkfhjg"
+
+Caesar's method 
+
+
+Hash the password 
+
+
+npm i bcrypt
+
+bcrypt is used to HASH strings -> "hellothere" -> "fohspoh90t4.,n/.ldhp9yp9hipugspigkfhjg"
+
+used 
+
+userSchema.pre("save")
+
+userschema method, prior to save event
+
+password -> hashed password 
+
+
+login 
+
+compare -> hashed and user entered password
+
+
+
+API Security 
+
+token based system 
+
+
+https://www.youtube.com/watch?v=giKeegmeaKw&ab_channel=HAMYLABS

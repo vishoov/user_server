@@ -4,6 +4,8 @@
 //username -> email 
 //Data Model -> Model / Blueprint -> Schema -> Object -> Document
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
 
 const userSchema = new mongoose.Schema({
     name:{
@@ -99,6 +101,48 @@ const userSchema = new mongoose.Schema({
   
 });
 
+// PASSOWRD HASHING
+
+//here i will encrypt the password using bcrypt
+//encrypt the password before saving the user to the database
+//algorithm, that will be chosen by bcrypt
+//bcrypt will encrypt the password using the algorithm
+//at the time of authentication we will compare the password with the encrypted password
+
+// user will send data -> controller -> encrypting the password -> model -> database
+userSchema.pre("save", async function(next){
+    const user = this;
+    //this will give the current user object
+    const salt = await bcrypt.genSalt(10);
+    //generate a salt with 10 rounds
+
+    //salt is a random string that is used to encrypt the password
+    //password + salt -> n times mix -> look different -> Hashed Password 
+
+    const hashedPassword = await bcrypt.hash(user.password, salt);
+
+    user.password = hashedPassword;
+    //set the password to the hashed password
+
+    next();
+
+})
+//.pre middleware executes before the save method is called 
+
+//compare password method for login functionality
+//this method will be used to compare the password with the hashed password
+userSchema.methods.comparePassword = async function(password){
+    const user = this;
+    //current user -> this -> password, email, name, age
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    //compare the password with the hashed password
+    //returns a bool value - T/F
+
+    return isMatch;
+    //if password is correct then return true
+
+}
 
 const User = mongoose.model("User", userSchema);
 

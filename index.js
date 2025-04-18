@@ -1,5 +1,5 @@
 const express = require('express');
-
+const rateLimit = require('express-rate-limit');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv= require('dotenv');
@@ -23,6 +23,19 @@ mongoose.connect(local)
 const userRoutes = require('./view/user.routes');
 
 app.use(express.json());
+
+const limiter = rateLimit({
+    //till how long and how many requests we can send to the server
+    //after that we will get an error
+    windowMs: 720 * 60 * 1000, // 12 hours in milliseconds
+    //for how long do i have to wait to send the next request
+    maxRequests: 1000, // limit each IP to 100 requests per windowMs
+
+
+});
+
+app.use(limiter);
+
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");

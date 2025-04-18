@@ -1,7 +1,7 @@
 //database connect 
 // client <----> server <-----> database 
 const User = require('../models/user.model');
-
+const comparePassword = require('../models/user.model');
 
 const register = async (req, res)=>{
 
@@ -43,9 +43,13 @@ const login = async (req, res)=>{
 
     //then password auth
     
-    if(user.password!==password){
-        return res.status(400).send("Invalid password");
-    }
+    //now this method has become useless 
+    // if(user.password!==password){
+    //     return res.status(400).send("Invalid password");
+    // }
+
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) return res.status(400).send("Invalid password");
 
     res.status(200).send(user);
 
@@ -61,7 +65,7 @@ const login = async (req, res)=>{
 }
 catch(err){
     console.log(err);
-    res.status(500).send("Internal server error");
+    res.status(500).send(err.message);
 }
 }
 
