@@ -1,23 +1,28 @@
 const User = require("../models/user.model");
-
+const { auth, generateToken } = require("../middleware/user.auth");
 
 const router = require("express").Router();
 
 const { register, login, profileRoute, all_users } = require("../controller/user.controllers");
 
 //register
-router.post("/register", register)
+router.post("/register", register);
+
+
 
 
 //login
-router.post("/login", login)
+router.post("/login",  login);
 
 
 //profile
 // get /profile -> welcome user, this is your profile 
 //profile
 
-router.get("/profile", profileRoute)
+router.get("/profile", auth, profileRoute)
+
+// requet -> router handler -> secure (auth)-> callback function -> user info  
+
 
 //reset password
 router.put("/reset-password/:id", async (req, res)=>{    

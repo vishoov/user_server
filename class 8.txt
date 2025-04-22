@@ -1,0 +1,104 @@
+windowsMS -> time window 
+current time -> 12 hours 
+
+
+Bank portal
+Govt Site 
+
+
+API Security -> the most important kind of security
+
+USER AUTHENTICATION 
+
+RESTful APIs 
+
+-> we always collect ALL the data needed by the server to respond to a client request 
+-> STATELESS 
+-> modular structure -> efficienty increase of our server 
+-> async await -> latency handle
+-> try and catch -> error handlded 
+
+
+security -> username/email, password 
+Stateless 
+
+Conclusion = Protected Routes -> security -> /profile -> username password -> get   
+
+
+facebook -> 
+-login, messages 
+-login, send messages
+-login, reply? 
+
+-> TIRING 
+
+-> User Authentication 
+
+-> Protect the Routes
+-> no need of email/pass everytime 
+
+
+-> Facebook -> Laptop -> 2-3 months -> still logged in
+
+-> API Security -> User Authentication 
+
+-> user logs in once and stays logged in for days 
+-> can access all the features of his account 
+
+Very important thing
+
+History 
+-> User -> email and password -> json -> body/header -> json 
+-> server hacker middleware 
+-> information save -> email password
+
+-> SESSION BASED AUTHENTICATION
+Reject -> space exhaust -> space complexity very high 
+youtube 
+-vishoo pass -> Server verify -> sessionID -> device -> session created 
+-> stored on server -> users increase -> space exhaust -> millions 
+-> server crash
+
+Token based authentication 
+
+Statelessness is maintained 
+
+-> user login -> token generate -> client side save -> token verify 
+-> authentication
+-> token format 
+-> header.payload.signature 
+
+->header = technical details -> format, encryption algorithm 
+->payload -> user information -> vishoo's login -> email, password -> stateless
+    -> standalone requests -> token client side-> encrypted token -> vishoo's token 
+->Signature-> you can add one secret key to make the token even more secure and 
+avoid getting lost or stolen
+
+-> movie ticket -> QR code -> ticket number 
+
+
+-> user login/user signup -> token create -> client side -> cookies/header json 
+-> protected route access-> token comes along by itself -> jwt.method -> decoded compare
+
+-> middleware 
+
+API Middleware/ Middleware Authentication/ User Auth
+
+
+-> Protected Route -> login
+
+-> middleware 
+-> before Responding
+-> token authentication 
+
+
+online movie ticket -> QR -> Theater -> authenticate 
+-> waterparks 
+-> gaming zones -> balance 
+-> facebook -> write a post, send a message 
+
+npm i jsonwebtoken
+
+
+
+whenever user sends his email 

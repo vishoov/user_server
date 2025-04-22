@@ -136,9 +136,13 @@ userSchema.methods.comparePassword = async function(password){
     //current user -> this -> password, email, name, age
 
     const isMatch = await bcrypt.compare(password, user.password);
+    //bcrypt.compare (plain password, hashed password)
+    //fucntion name(args, args) 
     //compare the password with the hashed password
     //returns a bool value - T/F
-
+    // $2a$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW
+    // \__/\/ \____________________/\_____________________________/
+    // Alg Cost      Salt                        Hash
     return isMatch;
     //if password is correct then return true
 

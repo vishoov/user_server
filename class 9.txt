@@ -1,0 +1,41 @@
+token -> response -> client 
+
+fetch();
+axios(); -> driver api calls handle 
+
+
+const login_response = await fetch("api link", {
+    callback 
+    header
+    body:{
+        user data input 
+    }
+
+})
+
+
+localStorage.set(response.token); 
+or
+
+cookies.set(response.token);
+
+protected 
+
+const response = await fetch("api link", {
+    header:{
+        authorization: `Bearer ${localStorage.token}`;
+    }
+})
+
+
+
+Full Stack Application
+
+client          deployed -> 192.168.0.1 -> amazon product -> amazon.in
+react 
+
+CORS
+
+
+server -> ip addrss -> 192.164.1.1 -> 24 hours live -> amazon.in 
+node

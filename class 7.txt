@@ -4,11 +4,11 @@ we are dealing with the data, and data is a very important asset
 so we need to secure it
 so for that, we are using API Security and Authentication 
 
-1. Password Security -> Encryption - done
-2. API Security -> User Authentication 
-3. Server Security -> Server shield 
-4. Rate Limiting -> to prevent Dos Attacks  - done
-5. Environment Variables - done
+1. Password Security -> Encryption - done -> user verify
+2. API Security -> User Authentication  -> features authentication -> done
+3. Server Security -> Server shield -> server protection 
+4. Rate Limiting -> to prevent Dos Attacks  - done -> avoid overwhleming the server 
+5. Environment Variables - done -> Development security 
 
 
 mongoose error -> network access -> ip address add -> worked 
@@ -57,7 +57,7 @@ API Security
 
 token based system 
 
-
+link 
 https://www.youtube.com/watch?v=giKeegmeaKw&ab_channel=HAMYLABS
 
 Json Web Token 

@@ -2,6 +2,8 @@
 // client <----> server <-----> database 
 const User = require('../models/user.model');
 const comparePassword = require('../models/user.model');
+const { generateToken } = require('../middleware/user.auth');
+
 
 const register = async (req, res)=>{
 
@@ -10,6 +12,7 @@ const register = async (req, res)=>{
         //User.create -> create a new user in the database
         //req.body -> data from the client
         const user = await User.create(req.body);
+        console.log(user);
     // const { username, email, password } = req.body;
     //writing a logic to save the user in database
     //javascript -> synchronous 
@@ -19,8 +22,16 @@ const register = async (req, res)=>{
         //it wont crash the server 
     // const user = await User.create({ username, email, password });;
     // console.log(username, email, password);
-    
+
+
+    // token -> jwt.sign -> user id -> secret key
+
+    const token = generateToken(user);
+    console.log(token);
+    //generate token for the user
+    //this will be send to the client as well
     res.send(user);
+
     }
     catch(err){
         console.log(err);
@@ -51,6 +62,9 @@ const login = async (req, res)=>{
     const isMatch = await user.comparePassword(password);
     if (!isMatch) return res.status(400).send("Invalid password");
 
+
+    const token = generateToken(user);
+    console.log(token);
     res.status(200).send(user);
 
 
@@ -75,9 +89,9 @@ const profileRoute =  async (req, res) => {
     const { email }= req.body;
     //await
         const user = await User.findOne({email:email});
-        console.log(user)
+      
         const name = user.name;
-        res.send(`Welcome ${name}, this is your profile`);
+        res.send(`Welcome ${name}, this is your profile ${user}`);
     
     }
     catch(err){
